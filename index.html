@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loan EMI Calculator</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-dark bg-dark py-3">
+    <div class="container">
+      <a class="navbar-brand fw-bold fs-4" href="#">EMI Planner</a>
+      <span class="text-white">Smart Financial Planning</span>
+    </div>
+  </nav>
+
+  <div class="container py-5">
+
+    <!-- Heading -->
+    <div class="text-center mb-5">
+      <h1 class="fw-bold text-primary">Loan EMI Calculator</h1>
+      <p class="text-secondary fs-5">Calculate your monthly loan payments easily</p>
+    </div>
+
+    <!-- Calculation Section -->
+    <div class="row justify-content-center">
+      <div class="col-lg-6 col-md-8 col-12">
+
+        <div class="bg-white shadow-lg rounded-4 p-4 p-md-5">
+
+          <h3 class="text-center fw-bold mb-4">Loan Details</h3>
+
+          <form id="emiForm">
+
+            <div class="mb-4">
+              <label class="form-label fw-semibold">Loan Amount</label>
+              <div class="input-group">
+                <span class="input-group-text">₹</span>
+                <input type="number" id="amount" class="form-control form-control-lg" placeholder="Enter loan amount" required>
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <label class="form-label fw-semibold">Annual Interest Rate</label>
+              <div class="input-group">
+                <input type="number" id="rate" class="form-control form-control-lg" placeholder="Enter interest rate" step="any" required>
+                <span class="input-group-text">%</span>
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <label class="form-label fw-semibold">Loan Tenure</label>
+              <div class="input-group">
+                <input type="number" id="years" class="form-control form-control-lg" placeholder="Enter loan tenure" required>
+                <span class="input-group-text">Years</span>
+              </div>
+            </div>
+
+            <div class="d-grid gap-3 mt-4">
+              <button type="submit" class="btn btn-primary btn-lg fw-semibold">
+                Calculate EMI
+              </button>
+              <button type="reset" class="btn btn-outline-secondary btn-lg">
+                Reset
+              </button>
+            </div>
+
+          </form>
+
+          <!-- EMI Result -->
+          <div id="result" class="alert alert-success text-center mt-4 d-none">
+            <h5 class="fw-bold mb-2">Your Monthly EMI</h5>
+            <h3 id="emiValue" class="fw-bold mb-0"></h3>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
