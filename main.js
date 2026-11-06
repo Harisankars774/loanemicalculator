@@ -1,9 +1,9 @@
 
 const form = document.getElementById("emiForm");
-const result = document.getElementById("result");
 const emiValue = document.getElementById("emiValue");
 
 form.addEventListener("submit", function(event) {
+
   event.preventDefault();
 
   let p = Number(document.getElementById("amount").value);
@@ -22,7 +22,8 @@ form.addEventListener("submit", function(event) {
 
   if (r === 0) {
     emi = p / n;
-  } else {
+  } 
+  else {
     emi = p * r * Math.pow(1 + r, n) /
           (Math.pow(1 + r, n) - 1);
   }
@@ -32,10 +33,9 @@ form.addEventListener("submit", function(event) {
     maximumFractionDigits: 2
   });
 
-  result.classList.remove("d-none");
 });
 
-// Reset the form and hide the result
+// Reset EMI result
 form.addEventListener("reset", function() {
-  result.classList.add("d-none");
+  emiValue.innerText = "₹0.00";
 });
